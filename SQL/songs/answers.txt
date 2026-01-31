@@ -1,0 +1,14 @@
+Suppose Spotify determines an audio aura by looking at the average energy, valence, and danceability
+of a person’s top 100 songs from the past year.
+
+If songs.db contains the top 100 songs of one listener from 2018,
+how would you characterize their audio aura?
+
+We can calculate the average by SELECT AVG(energy),AVG(valence), AVG(danceability) from songs; and then
+compare them against a table in the database using LIKE statements after obtaining a sum of averages.
+
+Hypothesize about why the way you’ve calculated this aura might not be very
+representative of the listener. What better ways of calculating this aura would you propose?
+
+This is not accurate because average gets affected by extremes. To avoid this, we can use play_count
+and multiply it with the song and then count the average and sum
